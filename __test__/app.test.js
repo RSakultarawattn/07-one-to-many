@@ -1,7 +1,7 @@
 const fs = require('fs');
 const request = require('supertest');
 const Book = require('../lib/models/Books.js');
-const app = require('../lib/sql/app.js');
+const app = require('../lib/app.js');
 const pool = require('../lib/utils/pool');
 
 
@@ -11,7 +11,7 @@ describe('app tests', () => {
   beforeEach(() => {
     return pool.query(fs.readFileSync('./lib/sql/setup.sql', 'utf-8'));
   });
-  
+    
   afterAll(() => {
     return pool.end();
   });
