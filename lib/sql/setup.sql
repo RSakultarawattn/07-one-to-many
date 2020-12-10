@@ -10,7 +10,6 @@ CREATE TABLE books (
 
 CREATE TABLE chapters (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  title TEXT NOT NULL,
   length INTEGER CHECK (length > 0),
-  chapter_id BIGINT REFERENCES chapters(id)
+  book_id BIGINT REFERENCES books(id)
 )
